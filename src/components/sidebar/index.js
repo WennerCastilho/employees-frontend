@@ -4,24 +4,20 @@ import { Link } from "react-router-dom";
 
 import { BsSearch, BsHouseDoor } from "react-icons/bs";
 import { HiUserAdd } from "react-icons/hi";
-import { useSelector } from "react-redux";
 
-export const Sidebar = () => {
-  const employees = useSelector((state) => state.employees);
-  return (
-    <Container>
-      <Icon to="/">
-        <BsHouseDoor />
-      </Icon>
-      <Icon to="/buscar">
-        <BsSearch />
-      </Icon>
-      <Icon to="/cadastrar">
-        <HiUserAdd />
-      </Icon>
-    </Container>
-  );
-};
+export const Sidebar = () => (
+  <Container>
+    <Icon to="/">
+      <BsHouseDoor />
+    </Icon>
+    <Icon to="/buscar">
+      <BsSearch />
+    </Icon>
+    <Icon to="/cadastrar">
+      <HiUserAdd />
+    </Icon>
+  </Container>
+);
 
 export const Container = styled.div`
   width: 60px;
