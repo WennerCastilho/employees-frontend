@@ -56,6 +56,7 @@ export const ListEmployees = () => {
 };
 
 export const Container = styled.div`
+  height: 100%;
   --rft-main-color: #00363a;
   --rft-button-color: #00363a;
   --rft-even-row-color: #f3f3f3;

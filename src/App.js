@@ -20,9 +20,9 @@ export const App = () => (
 
 export const Container = styled.div`
   position: absolute;
-  top: 50px;
+  top: 40px;
   right: 50px;
-  bottom: 50px;
+  bottom: 40px;
   left: 50px;
 
   display: flex;
