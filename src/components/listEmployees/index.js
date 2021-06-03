@@ -3,7 +3,10 @@ import { useDispatch, useSelector } from "react-redux";
 import styled from "styled-components";
 import { allEmployees } from "../../store/modules/employees/actions";
 
-import { Employee } from "../employee";
+import ReactFlexyTable from "react-flexy-table";
+import "react-flexy-table/dist/index.css";
+
+import { Delete } from "./delete";
 
 export const ListEmployees = () => {
   const dispatch = useDispatch();
@@ -13,7 +16,6 @@ export const ListEmployees = () => {
     const axios = require("axios");
     let response = await axios.get("http://127.0.0.1:8000/api/employees/");
     let data = await response;
-    console.log("Requisitou");
     return dispatch(allEmployees(data.data));
   };
 
@@ -21,26 +23,49 @@ export const ListEmployees = () => {
     getEmployees();
   }, []);
 
+  const additionalCols = [
+    {
+      header: "Modificar",
+      td: (data) => {
+        return (
+          <div>
+            <Delete employee={data} />
+          </div>
+        );
+      },
+    },
+  ];
+
   return (
     <Container>
-      <Employee
-        employees={{
-          nome: "Nome",
-          cpf: "CPF",
-          salario: "Salário",
-          desconto: "Desconto",
-          dependentes: "Dependentes",
-          desconto_IRPF: "IRPF",
-          deletar: "Deletar",
-        }}
-        key="header"
-      />
-      {employees &&
-        employees.map((element) => (
-          <Employee employees={element} key={element.nome} />
-        ))}
+      {employees && (
+        <ReactFlexyTable
+          data={employees}
+          filterable
+          additionalCols={additionalCols}
+          pageSizeOptions={[5, 10]}
+          className="table"
+          previousText="Voltar"
+          nextText="Avançar"
+        />
+      )}
     </Container>
   );
 };
 
-export const Container = styled.div``;
+export const Container = styled.div`
+  --rft-main-color: #00363a;
+  --rft-button-color: #00363a;
+  --rft-even-row-color: #f3f3f3;
+
+  border-left: 2px solid transparent;
+
+  table {
+    border-radius: 0 5px 0 0;
+    th {
+      :hover {
+        background: transparent;
+      }
+    }
+  }
+`;

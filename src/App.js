@@ -7,13 +7,22 @@ import { ListEmployees } from "./components/listEmployees";
 export const App = () => (
   <Container>
     <Sidebar />
-    <Switch>
-      <Route exact path="/">
-        <ListEmployees />
-      </Route>
-      <Route path="/buscar">Campo de Busca</Route>
-      <Route path="/cadastrar">Página de Cadastro</Route>
-    </Switch>
+    <div className="content">
+      <Switch>
+        <Route exact path="/">
+          <div className="header"></div>
+          <ListEmployees />
+        </Route>
+        <Route path="/buscar">
+          <div className="header"></div>
+          Campo de Busca
+        </Route>
+        <Route path="/cadastrar">
+          <div className="header"></div>
+          Página de Cadastro
+        </Route>
+      </Switch>
+    </div>
   </Container>
 );
 
@@ -30,5 +39,10 @@ export const Container = styled.div`
   border-radius: 5px;
   font-family: sans-serif;
   backdrop-filter: blur(10px);
+
+  div.content {
+    width: 100%;
+    /* background: red; */
+    border-radius: 0 5px 5px 0;
+  }
 `;
-// SideBar #00363a

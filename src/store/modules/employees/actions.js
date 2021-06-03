@@ -1,5 +1,9 @@
-// export const addToList = (nome) => ({ type: "@employees/ADD", nome });
 export const allEmployees = (employees) => ({
   type: "@employees/ALL",
   employees,
+});
+
+export const removeEmployee = (employee) => ({
+  type: "@employees/REMOVE",
+  employee,
 });
