@@ -10,17 +10,9 @@ export const App = () => (
     <div className="content">
       <Switch>
         <Route exact path="/">
-          <div className="header"></div>
           <ListEmployees />
         </Route>
-        <Route path="/buscar">
-          <div className="header"></div>
-          Campo de Busca
-        </Route>
-        <Route path="/cadastrar">
-          <div className="header"></div>
-          Página de Cadastro
-        </Route>
+        <Route path="/cadastrar">Página de Cadastro</Route>
       </Switch>
     </div>
   </Container>
@@ -42,7 +34,6 @@ export const Container = styled.div`
 
   div.content {
     width: 100%;
-    /* background: red; */
     border-radius: 0 5px 5px 0;
   }
 `;
