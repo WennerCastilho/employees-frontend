@@ -7,6 +7,7 @@ import ReactFlexyTable from "react-flexy-table";
 import "react-flexy-table/dist/index.css";
 
 import { Delete } from "./delete";
+import { Update } from "./update";
 
 export const ListEmployees = () => {
   const dispatch = useDispatch();
@@ -28,7 +29,8 @@ export const ListEmployees = () => {
       header: "Modificar",
       td: (data) => {
         return (
-          <div>
+          <div className="modificar">
+            <Update employee={data} />
             <Delete employee={data} />
           </div>
         );
@@ -67,5 +69,15 @@ export const Container = styled.div`
         background: transparent;
       }
     }
+
+    tr {
+      :hover {
+        color: #000;
+      }
+    }
+  }
+
+  div.modificar {
+    display: flex;
   }
 `;
