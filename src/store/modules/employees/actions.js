@@ -7,3 +7,8 @@ export const removeEmployee = (employee) => ({
   type: "@employees/REMOVE",
   employee,
 });
+
+export const updateEmployee = (employee) => ({
+  type: "@employees/UPDATE",
+  employee,
+});
