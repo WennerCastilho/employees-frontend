@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 import { RiDeleteBin6Line } from "react-icons/ri";
-import { BsPencil } from "react-icons/bs";
 
 import { useDispatch } from "react-redux";
 import { removeEmployee } from "../../store/modules/employees/actions";
@@ -17,9 +16,6 @@ export const Delete = ({ employee }) => {
 
   return (
     <Container>
-      <span className="pencil">
-        <BsPencil />
-      </span>
       <span className="delete" onClick={getEmployees}>
         <RiDeleteBin6Line />
       </span>
@@ -30,10 +26,5 @@ export const Delete = ({ employee }) => {
 export const Container = styled.div`
   span {
     font-size: 20px;
-  }
-  span.pencil {
-    margin-right: 8px;
-  }
-  span.delete {
   }
 `;
