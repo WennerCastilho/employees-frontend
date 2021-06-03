@@ -2,16 +2,13 @@ import styled from "styled-components";
 
 import { Link } from "react-router-dom";
 
-import { BsSearch, BsHouseDoor } from "react-icons/bs";
+import { BsHouseDoor } from "react-icons/bs";
 import { HiUserAdd } from "react-icons/hi";
 
 export const Sidebar = () => (
   <Container>
     <Icon to="/">
       <BsHouseDoor />
-    </Icon>
-    <Icon to="/buscar">
-      <BsSearch />
     </Icon>
     <Icon to="/cadastrar">
       <HiUserAdd />
