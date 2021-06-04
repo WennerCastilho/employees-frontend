@@ -2,7 +2,8 @@ import styled from "styled-components";
 import { Sidebar } from "./components/sidebar";
 import { Switch, Route } from "react-router-dom";
 
-import { ListEmployees } from "./components/listEmployees";
+import { Home } from "./components/home";
+import { Register } from "./components/register";
 
 export const App = () => (
   <Container>
@@ -10,9 +11,11 @@ export const App = () => (
     <div className="content">
       <Switch>
         <Route exact path="/">
-          <ListEmployees />
+          <Home />
         </Route>
-        <Route path="/cadastrar">Página de Cadastro</Route>
+        <Route path="/cadastrar">
+          <Register />
+        </Route>
       </Switch>
     </div>
   </Container>
