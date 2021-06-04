@@ -83,5 +83,12 @@ export const Container = styled.div`
   }
 
   @media (max-width: 892px) {
+    border: 0;
+    border-top: 10px solid transparent;
+    border-radius: 0;
+
+    table {
+      border-radius: 0;
+    }
   }
 `;

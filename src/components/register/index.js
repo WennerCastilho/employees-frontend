@@ -154,4 +154,11 @@ export const Container = styled.div`
       }
     }
   }
+
+  @media (max-width: 892px) {
+    form {
+      background: transparent;
+      margin-top: 30px;
+    }
+  }
 `;
