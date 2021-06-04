@@ -20,6 +20,7 @@ const useStyles = makeStyles((theme) => ({
 export const Register = () => {
   const classes = useStyles();
   const [open, setOpen] = useState(false);
+  const [message, setMessage] = useState("");
 
   const {
     register,
@@ -39,8 +40,15 @@ export const Register = () => {
         desconto: Number(data.desconto),
         dependentes: Number(data.dependentes),
       })
-      .then((response) => dispatch(dispatch(addEmployee(response.data))))
-      .catch(() => setOpen(true));
+      .then((response) => {
+        dispatch(dispatch(addEmployee(response.data)));
+        setMessage("Funcionário criado com sucesso!");
+        setOpen(true);
+      })
+      .catch(() => {
+        setMessage("Nome ou CPF já existe!");
+        setOpen(true);
+      });
   };
 
   return (
@@ -106,7 +114,7 @@ export const Register = () => {
         open={open}
         autoHideDuration={6000}
         onClose={() => setOpen(false)}
-        message="Nome ou CPF já existe!"
+        message={message}
       />
     </Container>
   );
