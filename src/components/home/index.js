@@ -81,4 +81,7 @@ export const Container = styled.div`
   div.modificar {
     display: flex;
   }
+
+  @media (max-width: 892px) {
+  }
 `;

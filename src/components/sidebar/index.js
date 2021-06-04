@@ -26,6 +26,15 @@ export const Container = styled.div`
   align-items: center;
 
   border-radius: 5px 0 0 5px;
+
+  @media (max-width: 892px) {
+    width: 100%;
+    height: 80px;
+    border-radius: 0;
+
+    flex-direction: row;
+    justify-content: space-evenly;
+  }
 `;
 
 export const Icon = styled(Link)`

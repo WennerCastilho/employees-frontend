@@ -39,4 +39,13 @@ export const Container = styled.div`
     width: 100%;
     border-radius: 0 5px 5px 0;
   }
+
+  @media (max-width: 892px) {
+    position: static;
+    border-radius: 0;
+    flex-direction: column;
+
+    background-color: transparent;
+    backdrop-filter: blur(1px);
+  }
 `;

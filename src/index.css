@@ -4,17 +4,21 @@
   border: 0;
 }
 
-html,
 body {
   background-image: linear-gradient(to bottom right, #43b0b5, #d2c9a2);
   width: 100vw;
   height: 100vh;
-}
+  box-sizing: border-box;
 
-body {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   position: relative;
+}
+
+@media (max-width: 892px) {
+  body {
+    display: block;
+  }
 }

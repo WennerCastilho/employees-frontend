@@ -123,7 +123,7 @@ export const Modal = styled.div`
       }
 
       input {
-        width: 50%;
+        width: 60%;
         outline: none;
         padding: 10px 5px;
         margin: 0 auto;
@@ -147,6 +147,34 @@ export const Modal = styled.div`
           color: #00363a;
           cursor: pointer;
         }
+      }
+    }
+  }
+
+  @media (max-width: 892px) {
+    top: 8%;
+    right: 10%;
+    bottom: 8%;
+    left: 10%;
+
+    padding: 0 8px 8px;
+
+    div.header-modal {
+      align-items: center;
+    }
+
+    div.body-modal {
+      form {
+        input {
+          width: 90%;
+        }
+      }
+    }
+
+    div.footer-modal {
+      button,
+      input {
+        margin: 0;
       }
     }
   }
