@@ -12,3 +12,8 @@ export const updateEmployee = (employee) => ({
   type: "@employees/UPDATE",
   employee,
 });
+
+export const addEmployee = (employee) => ({
+  type: "@employees/ADD",
+  employee,
+});

@@ -15,6 +15,12 @@ export const employeesReducer = (state = [], action) => {
         a.id < b.id ? -1 : a.id > b.id ? 1 : 0
       );
 
+    case "@employees/ADD":
+      let new_employee = [...state, action.employee];
+      return new_employee.sort((a, b) =>
+        a.id < b.id ? -1 : a.id > b.id ? 1 : 0
+      );
+
     default:
       return state;
   }
